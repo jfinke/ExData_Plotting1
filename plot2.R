@@ -14,7 +14,12 @@ hpc3<-with(hpc2, subset(hpc2, hpc2$DateTime < as.POSIXct('2007-02-03 00:00:00'))
 png(filename = "plot2.png", width = 480, height = 480)
 
 # Drawing the histogram
-hist(hpc3$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", ylab = "Frequency", col = "red")
+#hist(hpc3$Global_active_power, main = "Global Active Power", 
+#     xlab = "Global Active Power (kilowatts)", ylab = "Frequency", col = "red")
+
+# Drawing the plot
+plot(hpc3$DateTime, hpc3$Global_active_power, type="l", xlab = "" ,ylab = "Global Active Power (kilowatts)")
+
 
 # Closing the png device
 dev.off()
